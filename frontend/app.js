@@ -47,12 +47,14 @@ function adicionarEventosPersona(){
             await formData.append('dinero', dinero);        
             
             const uiPersona = new UIPersona();
-            console.log(formData);
-            console.log(nombre, dinero);
+            const persona = JSON.stringify({
+                nombre,
+                dinero
+            });
             if(accion==="nuevo"){
-                await uiPersona.addNewPersona(formData);
+                await uiPersona.addNewPersona(persona);
             }else{
-                await uiPersona.updatePersona(_id, formData);
+                await uiPersona.updatePersona(_id, persona);
             }               
             e.preventDefault();
         });
