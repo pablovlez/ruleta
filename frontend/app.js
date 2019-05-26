@@ -24,6 +24,15 @@ document.getElementById('jugadores')
     }); 
 
 function adicionarEventosPersona(){
+    
+    document.getElementById('dinero')
+        .addEventListener("keypress", (e) => {
+            var key = window.event ? e.which : e.keyCode;
+            if (key < 48 || key > 57) {
+            e.preventDefault();
+            }
+        });
+    
     document.getElementById('persona-form')
         .addEventListener('submit', e => {
             

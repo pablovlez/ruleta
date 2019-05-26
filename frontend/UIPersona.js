@@ -18,7 +18,7 @@ class UIPersona {
                             <input type="text" id="nombre" class="form-control" placeholder="Nombre" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="dinero" class="form-control" placeholder="Dinero">
+                            <input type="text" id="dinero" class="form-control" placeholder="Dinero" value="10000">
                         </div>
                         <div class="form-group">
                             <input type="hidden" id="_id" class="form-control">

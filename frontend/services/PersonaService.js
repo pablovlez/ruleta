@@ -1,6 +1,6 @@
 class PersonaService {
     constructor(){
-        this.URI = 'http://localhost:3000/api/personas';
+        this.URI = '/api/personas';
     }
 
     async getPersonas(){
