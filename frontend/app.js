@@ -41,7 +41,7 @@ function adicionarEventosPersona(){
             const accion = document.getElementById('accion').value;
             const _id = document.getElementById('_id').value;
 
-            const formData = await new FormData();
+            const formData = new FormData();
             
             await formData.append('nombre',nombre);
             await formData.append('dinero', dinero);        
