@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     const persona = await Persona.findByIdAndDelete(req.params.id);
-    unlink(path.resolve('./backend/public' + persona.imagePath));
+    //unlink(path.resolve('./backend/public' + persona.imagePath));
     res.json({message: 'Persona eliminada con exito'});
 });
 
