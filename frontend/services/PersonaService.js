@@ -37,7 +37,10 @@ class PersonaService {
 
     async updatePersona(personaId,persona){        
         const res = await fetch(this.URI +"/"+ personaId, {            
-            method:'PUT', 
+            method:'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            }, 
             body: persona           
         });
         const data = await res.json();
