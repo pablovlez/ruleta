@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', async () =>{
     uiPersona.renderJugadores();
     //uiPersona.renderJugadores();
     //uiPersona.renderJugadores();
+    return true;
 })
 
 document.getElementById('jugadores')
@@ -34,7 +35,7 @@ function adicionarEventosPersona(){
         });
     
     document.getElementById('persona-form')
-        .addEventListener('submit', e => {
+        .addEventListener('submit', async (e) => {
             
             const nombre = document.getElementById('nombre').value;
             const dinero = document.getElementById('dinero').value;                   
@@ -48,20 +49,23 @@ function adicionarEventosPersona(){
             
             const uiPersona = new UIPersona();
             if(accion==="nuevo"){
-                uiPersona.addNewPersona(formData);
+                await uiPersona.addNewPersona(formData);
             }else{
-                uiPersona.updatePersona(_id, formData);
+                await uiPersona.updatePersona(_id, formData);
             }               
             e.preventDefault();
+            return true;
         });
 
     document.getElementById('personas-cards')
-        .addEventListener('click', (e) => {
+        .addEventListener('click', async (e) => {
             if(e.target.classList.contains('delete')){            
                 const uiPersona = new UIPersona();
-                uiPersona.deletePersona(e.target.getAttribute('_id'));
+                await uiPersona.deletePersona(e.target.getAttribute('_id'));
                 e.preventDefault();
-            }        
+                return true;
+            } 
+            return true;       
         });
     
     document.getElementById('personas-cards')
