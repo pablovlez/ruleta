@@ -1,6 +1,6 @@
 class RuletaService {
     constructor(){
-        this.URI = 'http://localhost:3000/api/ruleta';
+        this.URI = '/api/ruleta';
     }
     //get
     async jugar(colorRuleta){

@@ -66,7 +66,7 @@ git remote add origin https://github.com/pablovlez/ruleta.git
 
 Descargar los paquetes
 ```sh
-git pull
+git pull origin master
 ```
 
 Crear archivo de configuracion para conexion a la base de datos
