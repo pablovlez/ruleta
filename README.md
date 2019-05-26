@@ -69,11 +69,11 @@ Descargar los paquetes
 git pull origin master
 ```
 
-Crear archivo de configuracion para conexion a la base de datos
+Modificar archivo de configuracion para conexion a la base de datos
 
 ```sh
-vi .env
-MONGODB_URI=mongodb://nombre_servidor/nombre_base_datos
+vi backend/database.js
+Reemplazar process.env.MONGODB_URI por el string de conexion 'mongodb://nombre_servidor/nombre_base_datos'
 ```
 
 **Instalacion de la aplicacion y dependencias**
