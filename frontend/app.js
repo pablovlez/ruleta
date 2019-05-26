@@ -44,13 +44,17 @@ function adicionarEventosPersona(){
             const formData = new FormData();
             
             formData.append('nombre',nombre);
-            formData.append('dinero', dinero);        
+            formData.append('dinero', dinero);
+            
+            const persona = {
+                nombre, dinero
+            };
             
             const uiPersona = new UIPersona();
             if(accion==="nuevo"){
-                uiPersona.addNewPersona(formData);
+                uiPersona.addNewPersona(persona);
             }else{
-                uiPersona.updatePersona(_id, formData);
+                uiPersona.updatePersona(_id, persona);
             }               
             e.preventDefault();
         });
