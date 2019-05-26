@@ -48,6 +48,7 @@ function adicionarEventosPersona(){
             
             const uiPersona = new UIPersona();
             console.log(formData);
+            console.log(nombre, dinero);
             if(accion==="nuevo"){
                 await uiPersona.addNewPersona(formData);
             }else{
