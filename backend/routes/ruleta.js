@@ -23,7 +23,7 @@ router.get('/jugar/:color',async (req, res) => {
         dineroGanado = 0;
     });
     
-    res.json({
+    return res.json({
         color: colorRuleta,
         data: personas             
     })

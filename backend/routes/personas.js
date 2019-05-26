@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
     try {
         const personas = await Persona.find();
         res.json(personas);
+
     } catch (error) {
         res.json({
             message:'Ha ocurrido un error',
@@ -26,9 +27,9 @@ router.post('/', async (req, res) => {
         console.log(req);
         const newPersona = new Persona({nombre, dinero});    
         await newPersona.save();
-        res.json({message:'Persona almacenada con exito'});
+        return res.json({message:'Persona almacenada con exito'});
     } catch (error) {
-        res.json({
+        return res.json({
             message:'Ha ocurrido un error',
             error
         });
@@ -39,9 +40,9 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const persona = await Persona.findByIdAndDelete(req.params.id);        
-        res.json({message: 'Persona eliminada con exito'});
+        return res.json({message: 'Persona eliminada con exito'});
     } catch (error) {
-        res.json({
+        return res.json({
             message:'Ha ocurrido un error',
             error 
         });
@@ -55,9 +56,9 @@ router.put('/:id', async (req, res) => {
         const persona = await Persona.findByIdAndUpdate(req.params.id,
         { nombre, dinero }
         );    
-        res.json({message: 'Persona actualizada con exito'});
+        return res.json({message: 'Persona actualizada con exito'});
     } catch (error) {
-        res.json({
+        return res.json({
             message:'Ha ocurrido un error',
             error 
         });
@@ -67,7 +68,7 @@ router.put('/:id', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     const persona = await Persona.findById(req.params.id);
-    res.json(persona);
+    return res.json(persona);
 });
 
 module.exports = router;
