@@ -34,7 +34,7 @@ function adicionarEventosPersona(){
         });
     
     document.getElementById('persona-form')
-        .addEventListener('submit', e => {
+        .addEventListener('submit', async e => {
             
             const nombre = document.getElementById('nombre').value;
             const dinero = document.getElementById('dinero').value;                   
@@ -47,10 +47,11 @@ function adicionarEventosPersona(){
             formData.append('dinero', dinero);        
             
             const uiPersona = new UIPersona();
+            console.log(formData);
             if(accion==="nuevo"){
-                uiPersona.addNewPersona(formData);
+                await uiPersona.addNewPersona(formData);
             }else{
-                uiPersona.updatePersona(_id, formData);
+                await uiPersona.updatePersona(_id, formData);
             }               
             e.preventDefault();
         });
