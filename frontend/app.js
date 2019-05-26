@@ -41,10 +41,10 @@ function adicionarEventosPersona(){
             const accion = document.getElementById('accion').value;
             const _id = document.getElementById('_id').value;
 
-            const formData = new FormData();
+            const formData = await new FormData();
             
-            formData.append('nombre',nombre);
-            formData.append('dinero', dinero);        
+            await formData.append('nombre',nombre);
+            await formData.append('dinero', dinero);        
             
             const uiPersona = new UIPersona();
             console.log(formData);
