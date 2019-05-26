@@ -12,9 +12,6 @@ class PersonaService {
     async postPersona(persona){
         const res = await fetch(this.URI,{
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
             body: persona
         });
         const data = await res.json();

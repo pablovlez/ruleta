@@ -8,8 +8,16 @@ const path = require('path');
 const Persona = require('../models/Persona');
 
 router.get('/', async (req, res) => {
-    const personas = await Persona.find();
-    res.json(personas);
+    try {
+        const personas = await Persona.find();
+        res.json(personas);
+    } catch (error) {
+        res.json({
+            message:'Ha ocurrido un error',
+            error
+        });
+    }
+    
 });
 
 router.post('/', async (req, res) => {    
