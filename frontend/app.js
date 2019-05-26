@@ -51,12 +51,13 @@ function adicionarEventosPersona(){
                 nombre,
                 dinero
             });
+            e.preventDefault();
             if(accion==="nuevo"){
                 await uiPersona.addNewPersona(persona);
             }else{
                 await uiPersona.updatePersona(_id, persona);
             }               
-            e.preventDefault();
+            
         });
 
     document.getElementById('personas-cards')
