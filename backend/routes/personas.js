@@ -10,10 +10,10 @@ const Persona = require('../models/Persona');
 router.get('/', async (req, res) => {
     try {
         const personas = await Persona.find();
-        res.json(personas);
+        return res.json(personas);
 
     } catch (error) {
-        res.json({
+        return res.json({
             message:'Ha ocurrido un error',
             error
         });

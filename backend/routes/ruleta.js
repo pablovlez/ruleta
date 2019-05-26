@@ -3,6 +3,7 @@ const router = Router();
 const path = require('path');
 
 const Persona = require('../models/Persona');
+
 // api/ruleta/jugar/:color
 router.get('/jugar/:color',async (req, res) => {
     let personas = await Persona.find();    

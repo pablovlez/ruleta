@@ -10,10 +10,9 @@ document.addEventListener('DOMContentLoaded', async () =>{
     const colorRuleta = uiCasino.colorRuleta();
     uiCasino.renderResultadoRuleta(colorRuleta);
     await uiCasino.jugar(colorRuleta);
-    uiPersona.renderJugadores();
+    await uiPersona.renderJugadores();
     //uiPersona.renderJugadores();
     //uiPersona.renderJugadores();
-    return true;
 })
 
 document.getElementById('jugadores')
@@ -35,7 +34,7 @@ function adicionarEventosPersona(){
         });
     
     document.getElementById('persona-form')
-        .addEventListener('submit', async (e) => {
+        .addEventListener('submit', e => {
             
             const nombre = document.getElementById('nombre').value;
             const dinero = document.getElementById('dinero').value;                   
@@ -49,23 +48,20 @@ function adicionarEventosPersona(){
             
             const uiPersona = new UIPersona();
             if(accion==="nuevo"){
-                await uiPersona.addNewPersona(formData);
+                uiPersona.addNewPersona(formData);
             }else{
-                await uiPersona.updatePersona(_id, formData);
+                uiPersona.updatePersona(_id, formData);
             }               
             e.preventDefault();
-            return true;
         });
 
     document.getElementById('personas-cards')
-        .addEventListener('click', async (e) => {
+        .addEventListener('click', (e) => {
             if(e.target.classList.contains('delete')){            
                 const uiPersona = new UIPersona();
-                await uiPersona.deletePersona(e.target.getAttribute('_id'));
+                uiPersona.deletePersona(e.target.getAttribute('_id'));
                 e.preventDefault();
-                return true;
-            } 
-            return true;       
+            }        
         });
     
     document.getElementById('personas-cards')

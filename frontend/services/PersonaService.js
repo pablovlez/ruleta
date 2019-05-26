@@ -16,6 +16,7 @@ class PersonaService {
         });
         const data = await res.json();
         console.log(data);       
+        return data;
         
     }
 
@@ -28,6 +29,7 @@ class PersonaService {
         });
         const data = await res.json();
         console.log(data);
+        return data;
     }
 
     async updatePersona(personaId,persona){        
@@ -37,6 +39,7 @@ class PersonaService {
         });
         const data = await res.json();
         console.log(data);
+        return data;
     }
 
     async getPersonaById(personaId){
