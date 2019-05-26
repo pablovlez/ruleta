@@ -5,7 +5,8 @@ import {format} from 'timeago.js';
 
 class UICasino {
     async jugar(colorRuleta){
-        await ruletaService.jugar(colorRuleta);        
+        await ruletaService.jugar(colorRuleta);
+        return true;        
     }   
 
     colorRuleta(){

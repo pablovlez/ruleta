@@ -36,6 +36,7 @@ class UIPersona {
         `;
         container.appendChild(div);
         await this.renderPersonas();
+        return true;
     }
 
     async renderPersonas(){
@@ -57,6 +58,7 @@ class UIPersona {
             `;
             personasCardContainer.appendChild(div);
         });
+        return true;
     }
 
     async renderJugadores(){
@@ -79,12 +81,14 @@ class UIPersona {
             `;
             personasCardContainer.appendChild(div);
         });
+        return true;
     }
 
     async addNewPersona(persona){
         await personaService.postPersona(persona);
         this.clearPersonaForm();
         this.renderPersonas();
+        return true;
     }
 
     clearPersonaForm(){
@@ -101,12 +105,14 @@ class UIPersona {
     async deletePersona(personaId){
         await personaService.deletePersona(personaId);
         this.renderPersonas();
+        return true;
     }
 
     async updatePersona(personaId, persona){
         await personaService.updatePersona(personaId, persona);
         this.clearPersonaForm();
         this.renderPersonas();
+        return true;
     }
 
     async preparaUpdate(personaId){
